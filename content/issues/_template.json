@@ -1,0 +1,63 @@
+{
+  "id": "2026-w00",
+  "status": "draft",
+  "title": "Week 00 Reading Brief",
+  "theme": "",
+  "publishedAt": "2026-01-01",
+  "classDate": "2026-01-08",
+  "editorNote": "",
+  "synthesis": [],
+  "seminarPlan": [],
+  "articles": [
+    {
+      "slug": "article-one",
+      "accent": "#0f766e",
+      "source": {
+        "title": "",
+        "publisher": "",
+        "author": "",
+        "url": "",
+        "publishedAt": ""
+      },
+      "sourceTextPath": "",
+      "tags": [],
+      "brief": {
+        "titleKorean": "",
+        "dek": "",
+        "thesis": "",
+        "executiveSummary": "",
+        "whyItMatters": "",
+        "critique": "",
+        "keyInsights": [],
+        "keyTerms": [],
+        "discussionQuestions": []
+      },
+      "cards": []
+    },
+    {
+      "slug": "article-two",
+      "accent": "#b45309",
+      "source": {
+        "title": "",
+        "publisher": "",
+        "author": "",
+        "url": "",
+        "publishedAt": ""
+      },
+      "sourceTextPath": "",
+      "tags": [],
+      "brief": {
+        "titleKorean": "",
+        "dek": "",
+        "thesis": "",
+        "executiveSummary": "",
+        "whyItMatters": "",
+        "critique": "",
+        "keyInsights": [],
+        "keyTerms": [],
+        "discussionQuestions": []
+      },
+      "cards": []
+    }
+  ]
+}

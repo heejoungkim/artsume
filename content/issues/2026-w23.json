@@ -1,0 +1,167 @@
+{
+  "id": "2026-w23",
+  "status": "published",
+  "title": "Week 23 Reading Brief: 전문 지식 소비의 자동화",
+  "theme": "AI 시대의 학습 루틴, 지식노동, 수업 전 토론 설계",
+  "publishedAt": "2026-06-07",
+  "classDate": "2026-06-14",
+  "editorNote": "이번 호는 실제 외부 기사 대신 시스템 작동을 보여주는 데모 콘텐츠입니다. 다음 주차부터는 기사 URL 두 개를 넣고 요약 스크립트를 실행하면 같은 형식으로 발행됩니다.",
+  "synthesis": [
+    "좋은 자동화는 독서를 대체하기보다 수업 전 사고의 밀도를 높이는 보조 장치로 설계되어야 합니다.",
+    "요약은 핵심 주장, 근거 구조, 반론 가능성, 토론 질문을 함께 다룰 때 학습 자료로서의 가치가 커집니다.",
+    "카드 뉴스 형식은 가벼운 홍보물이 아니라 복잡한 논점을 단계적으로 공개하는 시각적 색인으로 사용할 수 있습니다."
+  ],
+  "seminarPlan": [
+    "각 기사별 핵심 주장과 근거를 5분 안에 비교합니다.",
+    "요약이 놓친 맥락과 반론을 수업 전에 표시합니다.",
+    "두 글이 공통으로 다루는 개념을 하나의 질문으로 압축합니다."
+  ],
+  "articles": [
+    {
+      "slug": "automation-as-reading-infrastructure",
+      "accent": "#0f766e",
+      "source": {
+        "title": "Automation as Reading Infrastructure",
+        "publisher": "Demo Source",
+        "author": "Editorial Demo",
+        "url": "",
+        "publishedAt": "2026-06-07"
+      },
+      "tags": [
+        "learning systems",
+        "automation",
+        "knowledge work"
+      ],
+      "brief": {
+        "titleKorean": "독서를 대체하지 않는 자동화",
+        "dek": "요약 자동화는 읽기의 마지막 결과물이 아니라, 수업 전 사고를 시작하기 위한 구조화된 첫 초안이어야 합니다.",
+        "thesis": "AI 기반 요약 시스템은 원문을 압축하는 데서 끝나지 않고, 핵심 논지와 토론 가능한 쟁점을 분리해 학습자의 판단을 앞당겨야 합니다.",
+        "executiveSummary": "이 글은 자동화된 독서 보조 도구가 단순한 시간 절약 장치로 설계될 때 생기는 한계를 지적합니다. 효과적인 시스템은 원문의 주장, 근거, 전제, 반론 가능성을 구조화하고, 독자가 수업 전에 무엇을 확인해야 하는지 명확히 보여주어야 합니다.",
+        "whyItMatters": "주 2편의 원서 아티클을 꾸준히 다루려면, 읽는 시간뿐 아니라 정리와 공유의 비용도 관리해야 합니다. 자동화는 이 반복 비용을 낮추되, 전문성을 희생하지 않는 편집 기준을 함께 가져야 합니다.",
+        "critique": "자동 요약은 원문의 논증 강도를 과대평가하거나 뉘앙스를 평평하게 만들 수 있습니다. 따라서 최종 발행 전에는 인용, 수치, 저자의 핵심 개념을 사람이 확인하는 절차가 필요합니다.",
+        "keyInsights": [
+          {
+            "label": "요약의 역할",
+            "detail": "결론을 대신 내려주는 문서가 아니라, 토론 전에 확인할 논점 목록이어야 합니다."
+          },
+          {
+            "label": "전문성의 조건",
+            "detail": "핵심 주장, 근거 유형, 반론 가능성, 적용 범위를 함께 보여줄 때 자료의 신뢰도가 올라갑니다."
+          },
+          {
+            "label": "공유 포맷",
+            "detail": "블로그 글과 카드형 요약을 같은 데이터에서 생성하면 깊이와 확산성을 동시에 얻을 수 있습니다."
+          }
+        ],
+        "keyTerms": [
+          {
+            "term": "Reading infrastructure",
+            "definition": "개인이 반복적으로 읽고 정리하고 토론하기 위해 사용하는 도구, 형식, 일정의 결합입니다."
+          },
+          {
+            "term": "Editorial first draft",
+            "definition": "AI가 만든 초안을 사람이 검토하고 보강해 발행 가능한 자료로 바꾸는 편집 방식입니다."
+          }
+        ],
+        "discussionQuestions": [
+          "자동 요약이 수업 준비의 질을 높이려면 어떤 검증 단계가 반드시 필요할까요?",
+          "카드 뉴스 형식이 전문성을 떨어뜨리지 않으려면 어떤 정보를 생략하지 말아야 할까요?",
+          "두 편의 글을 한 주제로 묶는 기준은 주제, 방법론, 문제의식 중 무엇이어야 할까요?"
+        ]
+      },
+      "cards": [
+        {
+          "kicker": "Core claim",
+          "title": "자동화는 독서의 대체재가 아닙니다.",
+          "body": "핵심은 읽지 않아도 되는 요약이 아니라, 더 정확하게 읽기 위한 구조입니다.",
+          "footnote": "Use as a pre-class brief, not as a substitute for source reading."
+        },
+        {
+          "kicker": "Editorial standard",
+          "title": "전문적인 요약은 반론 가능성을 남깁니다.",
+          "body": "좋은 브리프는 저자의 주장뿐 아니라 전제와 한계를 같이 표시합니다.",
+          "footnote": "Check claims, evidence, and scope before publishing."
+        },
+        {
+          "kicker": "Workflow",
+          "title": "한 데이터에서 블로그와 카드가 함께 나옵니다.",
+          "body": "긴 글은 수업용 맥락을 제공하고, 카드는 공유 가능한 논점 색인이 됩니다.",
+          "footnote": "One content file, multiple publishing formats."
+        }
+      ]
+    },
+    {
+      "slug": "briefs-for-professional-discussion",
+      "accent": "#b45309",
+      "source": {
+        "title": "Briefs for Professional Discussion",
+        "publisher": "Demo Source",
+        "author": "Editorial Demo",
+        "url": "",
+        "publishedAt": "2026-06-07"
+      },
+      "tags": [
+        "seminar",
+        "critical reading",
+        "publishing"
+      ],
+      "brief": {
+        "titleKorean": "수업 토론을 위한 전문 브리프",
+        "dek": "공유용 콘텐츠는 보기 쉬워야 하지만, 판단의 근거가 사라질 정도로 가벼워져서는 안 됩니다.",
+        "thesis": "전문적인 브리프는 요약문, 핵심 개념, 반론, 토론 질문을 분리해 독자가 빠르게 스캔하면서도 깊이 있게 검토할 수 있게 해야 합니다.",
+        "executiveSummary": "이 글은 수업 전 자료가 단순 감상문과 달라야 한다고 봅니다. 독자가 같은 원문을 읽더라도 브리프를 통해 논점의 우선순위, 저자의 방법, 적용 가능한 맥락을 먼저 이해하면 토론의 밀도가 높아집니다.",
+        "whyItMatters": "블로그와 카드 뉴스는 공개 공유에 적합하지만, 전문성을 유지하려면 출처, 논증 구조, 질문 설계가 함께 들어가야 합니다.",
+        "critique": "카드형 콘텐츠는 맥락을 잘라내기 쉽기 때문에, 각 카드가 원문 전체를 대표한다는 착시를 줄이는 설계가 필요합니다.",
+        "keyInsights": [
+          {
+            "label": "수업 전 준비",
+            "detail": "요약은 읽은 내용을 기억하기 위한 기록이자, 토론할 질문을 선별하는 장치입니다."
+          },
+          {
+            "label": "공유 품질",
+            "detail": "짧은 카드에도 출처, 핵심 주장, 한계, 질문 중 적어도 하나의 판단 근거가 있어야 합니다."
+          },
+          {
+            "label": "반복 가능성",
+            "detail": "매주 같은 구조를 쓰면 읽기, 정리, 수업, 공유가 하나의 리듬으로 연결됩니다."
+          }
+        ],
+        "keyTerms": [
+          {
+            "term": "Seminar brief",
+            "definition": "토론 전 핵심 논점과 질문을 정리한 짧지만 구조화된 자료입니다."
+          },
+          {
+            "term": "Card-news index",
+            "definition": "긴 글의 결론을 대신하는 것이 아니라, 독자가 논점을 찾아 들어가게 하는 시각적 목차입니다."
+          }
+        ],
+        "discussionQuestions": [
+          "수업 자료와 공개 블로그 글의 문체는 어디까지 같아도 될까요?",
+          "전문성을 지키기 위해 카드 하나에 반드시 들어가야 할 정보는 무엇일까요?",
+          "요약 자동화의 품질을 평가하는 기준을 세운다면 어떤 항목이 필요할까요?"
+        ]
+      },
+      "cards": [
+        {
+          "kicker": "Seminar",
+          "title": "브리프는 토론의 출발선입니다.",
+          "body": "읽은 내용을 정리하는 데서 멈추지 않고, 수업에서 다룰 질문을 미리 좁혀줍니다.",
+          "footnote": "Prioritize claims that can be debated."
+        },
+        {
+          "kicker": "Public format",
+          "title": "보기 쉬운 자료도 근거를 가져야 합니다.",
+          "body": "공유용 콘텐츠일수록 출처와 논증 구조를 흐리지 않는 편집 기준이 필요합니다.",
+          "footnote": "Accessible does not mean shallow."
+        },
+        {
+          "kicker": "Cadence",
+          "title": "반복 가능한 형식이 학습 루틴을 만듭니다.",
+          "body": "매주 두 편이라는 리듬은 콘텐츠 구조가 안정적일 때 오래 유지됩니다.",
+          "footnote": "Template discipline reduces weekly friction."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "artsume",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Weekly English article reading briefs with blog and card-news publishing for GitHub Pages.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "check": "node scripts/validate-content.mjs && node scripts/build-site.mjs",
+    "new-week": "node scripts/new-week.mjs",
+    "summarize": "node scripts/summarize-week.mjs",
+    "serve": "node scripts/serve.mjs"
+  }
+}
