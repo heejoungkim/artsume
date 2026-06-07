@@ -12,6 +12,10 @@
     {
       "label": "Issues",
       "href": "/"
+    },
+    {
+      "label": "Paper of Mind",
+      "href": "/paper-of-mind/"
     }
   ]
 }

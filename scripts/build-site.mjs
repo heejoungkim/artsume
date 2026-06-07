@@ -1,4 +1,5 @@
 import path from "node:path";
+import { cp } from "node:fs/promises";
 import {
   absoluteHref,
   articleHref,
@@ -8,17 +9,21 @@ import {
   formatDate,
   issueHref,
   loadIssues,
+  loadPaperOfMind,
   loadSite,
   resetDir,
+  rootDir,
   writeText
 } from "./lib/content.mjs";
 
 const site = await loadSite();
 const issues = await loadIssues();
+const paperOfMind = await loadPaperOfMind();
 
 await resetDir(distDir);
+await copyProjectAssets();
 await writeText(path.join(distDir, "assets/styles.css"), styles());
-await writeText(path.join(distDir, "index.html"), renderHome(site, issues));
+await writeText(path.join(distDir, "index.html"), renderHome(site, issues, paperOfMind));
 
 for (const issue of issues) {
   await writeText(path.join(distDir, "issues", issue.id, "index.html"), renderIssue(site, issue, issues));
@@ -31,10 +36,28 @@ for (const issue of issues) {
   }
 }
 
+await writeText(path.join(distDir, "paper-of-mind", "index.html"), renderPaperIndex(site, paperOfMind));
+for (const paper of paperOfMind.papers) {
+  await writeText(path.join(distDir, "paper-of-mind", paper.slug, "index.html"), renderPaperPage(site, paperOfMind, paper));
+  await writeText(
+    path.join(distDir, "downloads", "paper-of-mind", `${paper.slug}.md`),
+    renderExpertDownload(paperOfMind, paper)
+  );
+}
+
 await writeText(path.join(distDir, "feed.json"), JSON.stringify(buildFeed(site, issues), null, 2));
 await writeText(path.join(distDir, "rss.xml"), buildRss(site, issues));
 
-function renderHome(site, issues) {
+async function copyProjectAssets() {
+  await cp(path.join(rootDir, "assets"), path.join(distDir, "assets"), {
+    recursive: true,
+    force: true
+  }).catch((error) => {
+    if (error.code !== "ENOENT") throw error;
+  });
+}
+
+function renderHome(site, issues, paperOfMind) {
   const latest = issues[0];
   const currentPath = "/";
   return page({
@@ -45,6 +68,14 @@ function renderHome(site, issues) {
     body: `
       <main class="home-shell">
         ${latest ? renderLatestIssue(latest, currentPath, site) : renderEmptyState()}
+        <section class="editorial-band" aria-labelledby="paper-room-title">
+          <div class="section-heading">
+            <p class="eyebrow">Reading room</p>
+            <h2 id="paper-room-title">${escapeHtml(paperOfMind.title)}</h2>
+          </div>
+          <p>${escapeHtml(paperOfMind.description)}</p>
+          <a class="text-link" href="${href(currentPath, "/paper-of-mind/")}">Paper of Mind 열기</a>
+        </section>
         <section class="issue-index" aria-labelledby="issue-index-title">
           <div class="section-heading">
             <p class="eyebrow">Archive</p>
@@ -293,6 +324,192 @@ function renderArticle(site, issue, article, issues) {
   });
 }
 
+function renderPaperIndex(site, paperOfMind) {
+  const currentPath = "/paper-of-mind/";
+  return page({
+    site,
+    title: `${paperOfMind.title} | ${site.title}`,
+    description: paperOfMind.subtitle,
+    pathName: currentPath,
+    body: `
+      <main class="paper-room">
+        <nav class="breadcrumb"><a href="${href(currentPath, "/")}">Issues</a><span>${escapeHtml(paperOfMind.title)}</span></nav>
+        <header class="paper-room-hero">
+          <p class="eyebrow">Article Summary Room</p>
+          <h1>${escapeHtml(paperOfMind.title)}</h1>
+          <p>${escapeHtml(paperOfMind.subtitle)}</p>
+          <aside>${escapeHtml(paperOfMind.description)}</aside>
+        </header>
+        <section class="paper-session-grid" aria-label="Paper sessions">
+          ${paperOfMind.sessions.map((session) => renderSessionBlock(session, paperOfMind, currentPath)).join("")}
+        </section>
+      </main>
+    `
+  });
+}
+
+function renderSessionBlock(session, paperOfMind, currentPath) {
+  const papers = paperOfMind.papers.filter((paper) => paper.session === session.id);
+  return `
+    <section class="paper-session">
+      <img src="${href(currentPath, session.image)}" alt="${escapeHtml(session.title)} illustration">
+      <div>
+        <p class="eyebrow">${escapeHtml(session.label)}</p>
+        <h2>${escapeHtml(session.title)}</h2>
+        <p>${escapeHtml(session.theme)}</p>
+      </div>
+      <div class="paper-list">
+        ${papers.map((paper) => `
+          <article class="paper-card" style="--accent:${escapeHtml(paper.accent)}">
+            <p class="source-line">${escapeHtml(paper.authorYear)}</p>
+            <h3><a href="${href(currentPath, paperHref(paper))}">${escapeHtml(paper.shortTitle)}</a></h3>
+            <p>${escapeHtml(paper.focus)}</p>
+            <div class="paper-actions">
+              <a href="${href(currentPath, paperHref(paper))}">카드뉴스 보기</a>
+              <a href="${href(currentPath, paperDownloadHref(paper))}">전문가용 요약 다운로드</a>
+            </div>
+          </article>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderPaperPage(site, paperOfMind, paper) {
+  const currentPath = paperHref(paper);
+  const session = paperOfMind.sessions.find((item) => item.id === paper.session) ?? {};
+  return page({
+    site,
+    title: `${paper.shortTitle} | ${paperOfMind.title} | ${site.title}`,
+    description: paper.public?.dek || paper.focus,
+    pathName: currentPath,
+    ogImage: session.image,
+    body: `
+      <main class="paper-page">
+        <nav class="breadcrumb"><a href="${href(currentPath, "/")}">Issues</a><a href="${href(currentPath, "/paper-of-mind/")}">${escapeHtml(paperOfMind.title)}</a><span>${escapeHtml(paper.shortTitle)}</span></nav>
+        <article class="paper-detail" style="--accent:${escapeHtml(paper.accent)}">
+          <header class="paper-detail-header">
+            <div>
+              <p class="eyebrow">${escapeHtml(session.label || "")} / ${escapeHtml(session.title || "")}</p>
+              <h1>${escapeHtml(paper.shortTitle)}</h1>
+              <p class="dek">${escapeHtml(paper.public?.dek || paper.focus)}</p>
+              <dl class="issue-meta">
+                <div><dt>Paper</dt><dd>${escapeHtml(paper.authorYear)}</dd></div>
+                <div><dt>Mode</dt><dd>Study + Card News</dd></div>
+                <div><dt>Source</dt><dd>${escapeHtml(paper.sourceScope)}</dd></div>
+              </dl>
+              <a class="primary-link" href="${href(currentPath, paperDownloadHref(paper))}" download>전문가용 요약 다운로드</a>
+            </div>
+            <img src="${href(currentPath, session.image || "")}" alt="${escapeHtml(session.title || paper.shortTitle)} illustration">
+          </header>
+
+          <section class="copyright-note">
+            <p>원문 PDF는 재게시하지 않습니다. 이 페이지는 수업과 공개 공유를 위한 변형 요약이며, 직접 인용 없이 논지와 임상적 함의를 재구성했습니다.</p>
+          </section>
+
+          <section class="paper-detail-grid">
+            <div class="study-panel">
+              <p class="eyebrow">Expert study note</p>
+              <h2>핵심 논지</h2>
+              <p>${escapeHtml(paper.expert.thesis)}</p>
+              ${paper.expert.map.map((block) => `
+                <section>
+                  <h3>${escapeHtml(block.heading)}</h3>
+                  <ul>
+                    ${block.points.map((point) => `<li>${escapeHtml(point)}</li>`).join("")}
+                  </ul>
+                </section>
+              `).join("")}
+              <section>
+                <h3>임상적 사용</h3>
+                <p>${escapeHtml(paper.expert.clinicalUse)}</p>
+              </section>
+              <section>
+                <h3>주의점</h3>
+                <p>${escapeHtml(paper.expert.cautions)}</p>
+              </section>
+            </div>
+
+            <aside class="study-questions">
+              <p class="eyebrow">Seminar questions</p>
+              <ol class="numbered-list">
+                ${paper.expert.studyQuestions.map((question) => `<li>${escapeHtml(question)}</li>`).join("")}
+              </ol>
+            </aside>
+          </section>
+
+          <section class="public-card-news" aria-labelledby="public-cards-title">
+            <div class="section-heading">
+              <p class="eyebrow">Public card news</p>
+              <h2 id="public-cards-title">대중용 카드뉴스</h2>
+            </div>
+            <div class="public-card-grid">
+              ${paper.public.cards.map((card, index) => `
+                <article class="public-card">
+                  <span class="card-index">${String(index + 1).padStart(2, "0")}</span>
+                  <p class="card-kicker">${escapeHtml(card.kicker)}</p>
+                  <h3>${escapeHtml(card.title)}</h3>
+                  <p>${escapeHtml(card.body)}</p>
+                  <div class="diagram-chip">${escapeHtml(card.diagram)}</div>
+                </article>
+              `).join("")}
+            </div>
+          </section>
+        </article>
+      </main>
+    `
+  });
+}
+
+function renderExpertDownload(paperOfMind, paper) {
+  const session = paperOfMind.sessions.find((item) => item.id === paper.session) ?? {};
+  return [
+    `# ${paper.shortTitle}`,
+    "",
+    `- Paper: ${paper.title}`,
+    `- Author / year: ${paper.authorYear}`,
+    `- Collection: ${paperOfMind.title}`,
+    `- Session: ${session.label || ""} ${session.title || ""}`.trim(),
+    "",
+    "## 저작권 메모",
+    "",
+    "원문 PDF를 재게시하지 않습니다. 이 파일은 학습과 토론을 위한 변형 요약이며, 직접 인용 없이 논지와 임상적 함의를 재구성한 자료입니다.",
+    "",
+    "## 핵심 논지",
+    "",
+    paper.expert.thesis,
+    "",
+    "## 상세 학습 노트",
+    "",
+    paper.expert.map.map((block) => [
+      `### ${block.heading}`,
+      "",
+      ...block.points.map((point) => `- ${point}`),
+      ""
+    ].join("\n")).join("\n"),
+    "## 임상적 사용",
+    "",
+    paper.expert.clinicalUse,
+    "",
+    "## 주의점",
+    "",
+    paper.expert.cautions,
+    "",
+    "## 수업 질문",
+    "",
+    ...paper.expert.studyQuestions.map((question, index) => `${index + 1}. ${question}`),
+    ""
+  ].join("\n");
+}
+
+function paperHref(paper) {
+  return `/paper-of-mind/${paper.slug}/`;
+}
+
+function paperDownloadHref(paper) {
+  return `/downloads/paper-of-mind/${paper.slug}.md`;
+}
+
 function renderIssuePager(current, issues, currentPath) {
   const index = issues.findIndex((issue) => issue.id === current.id);
   const newer = issues[index - 1];
@@ -450,7 +667,9 @@ a {
 .site-footer,
 .home-shell,
 .issue-page,
-.article-page {
+.article-page,
+.paper-room,
+.paper-page {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
 }
@@ -666,7 +885,11 @@ a {
 .card-news-section,
 .issue-split,
 .article-grid,
-.long-brief section {
+.long-brief section,
+.paper-session-grid,
+.paper-detail-grid,
+.public-card-news,
+.editorial-band {
   margin: 66px 0;
 }
 
@@ -852,6 +1075,232 @@ a {
   font-weight: 800;
 }
 
+.editorial-band {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 38px 0;
+}
+
+.editorial-band p {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 1.12rem;
+}
+
+.text-link {
+  display: inline-flex;
+  margin-top: 8px;
+  font-weight: 900;
+}
+
+.paper-room-hero {
+  min-height: 56vh;
+  display: grid;
+  align-content: center;
+  gap: 18px;
+  padding: 40px 0 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.paper-room-hero h1,
+.paper-detail-header h1 {
+  margin: 0;
+  max-width: 960px;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 1;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.paper-room-hero p {
+  max-width: 740px;
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+.paper-room-hero aside,
+.copyright-note {
+  max-width: 860px;
+  border-left: 7px solid var(--teal);
+  background: var(--paper-2);
+  padding: 18px 22px;
+  color: #374151;
+}
+
+.paper-session {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(220px, 0.5fr) minmax(0, 1.1fr);
+  gap: 26px;
+  align-items: start;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.paper-session img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.paper-session h2 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.paper-session p {
+  color: var(--muted);
+}
+
+.paper-list {
+  display: grid;
+  gap: 14px;
+}
+
+.paper-card {
+  position: relative;
+  border-top: 4px solid var(--accent);
+  padding: 18px 0 0;
+}
+
+.paper-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.28rem;
+  line-height: 1.2;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.paper-card p {
+  margin: 0 0 12px;
+  color: #3f4650;
+}
+
+.paper-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  font-weight: 900;
+  font-size: 0.92rem;
+}
+
+.paper-detail-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.85fr);
+  gap: 36px;
+  align-items: center;
+  padding: 28px 0 52px;
+}
+
+.paper-detail-header img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.copyright-note {
+  margin: 0 0 42px;
+}
+
+.copyright-note p {
+  margin: 0;
+}
+
+.paper-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.42fr);
+  gap: 36px;
+  align-items: start;
+}
+
+.study-panel {
+  border-top: 1px solid var(--line);
+}
+
+.study-panel > section,
+.study-panel > p,
+.study-panel > h2,
+.study-panel > .eyebrow {
+  max-width: 780px;
+}
+
+.study-panel h2 {
+  margin: 18px 0 8px;
+  font-size: 2rem;
+}
+
+.study-panel h3 {
+  margin: 26px 0 8px;
+  font-size: 1.25rem;
+}
+
+.study-panel ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.study-panel li + li {
+  margin-top: 8px;
+}
+
+.study-questions {
+  position: sticky;
+  top: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper-2);
+  padding: 22px;
+}
+
+.public-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.public-card {
+  position: relative;
+  min-height: 360px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper-2);
+  padding: 30px 24px 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.public-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 7px;
+  background: var(--accent);
+}
+
+.public-card h3 {
+  margin: 54px 0 14px;
+  font-size: 1.55rem;
+  line-height: 1.16;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.public-card p {
+  margin: 0;
+}
+
+.diagram-chip {
+  margin-top: auto;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   display: flex;
@@ -870,7 +1319,10 @@ a {
 @media (max-width: 900px) {
   .brief-hero,
   .issue-split,
-  .issue-row {
+  .issue-row,
+  .paper-session,
+  .paper-detail-header,
+  .paper-detail-grid {
     grid-template-columns: 1fr;
   }
 
@@ -879,15 +1331,22 @@ a {
   }
 
   .synthesis-band,
-  .deck-scroll {
+  .deck-scroll,
+  .public-card-grid {
     grid-template-columns: 1fr;
   }
 
   .hero-copy h1,
   .issue-header h1,
-  .long-brief h1 {
+  .long-brief h1,
+  .paper-room-hero h1,
+  .paper-detail-header h1 {
     font-size: 2.1rem;
     line-height: 1.14;
+  }
+
+  .study-questions {
+    position: static;
   }
 }
 

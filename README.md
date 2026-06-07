@@ -5,9 +5,18 @@ Artsume은 Article Summary Room입니다. 매주 영어 원서 아티클 2편을
 ## 현재 구조
 
 - `content/issues/*.json`: 주차별 브리프 원본 데이터입니다.
+- `content/paper-of-mind.json`: 4Q paper를 전문가용 요약과 대중용 카드뉴스로 정리한 데이터입니다.
+- `assets/paper-of-mind/*.jpg`: Paper of Mind 카드뉴스에 쓰는 생성 이미지입니다.
 - `scripts/summarize-week.mjs`: 기사 원문을 읽고 OpenAI Responses API로 전문 요약을 생성합니다.
 - `scripts/build-site.mjs`: 콘텐츠 JSON을 GitHub Pages용 정적 HTML로 빌드합니다.
 - `.github/workflows/pages.yml`: `main` 브랜치에 push되면 `dist`를 GitHub Pages에 배포합니다.
+
+## Paper of Mind
+
+상단 탭 `Paper of Mind`는 `/paper-of-mind/`에 생성됩니다. 원문 PDF는 저장소나 배포 산출물에 포함하지 않고, 각 paper마다 두 가지 버전을 제공합니다.
+
+- 전문가용 학습 노트: 개별 paper 페이지의 다운로드 링크로 제공되는 `.md` 파일입니다.
+- 대중용 카드뉴스: 개별 paper 페이지에서 읽을 수 있는 카드 형식 요약입니다.
 
 ## 주간 작업 흐름
 

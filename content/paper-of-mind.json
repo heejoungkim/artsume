@@ -1,0 +1,652 @@
+{
+  "title": "Paper of Mind",
+  "subtitle": "Attachment, psychoanalysis, mentalization, and trauma papers organized for study and public reading.",
+  "description": "4Q paper room. Original PDFs are not republished; every page contains transformative Korean study notes and public-facing card summaries.",
+  "sessions": [
+    {
+      "id": "session-1",
+      "label": "Session 1",
+      "title": "Foundations of Attachment",
+      "theme": "분리-개별화, 안정기지, 애착이론의 역사",
+      "image": "/assets/paper-of-mind/session-1-foundations.jpg"
+    },
+    {
+      "id": "session-2",
+      "label": "Session 2",
+      "title": "Clinical Integration",
+      "theme": "정신분석과 애착이론의 접점, 임상적 듣기",
+      "image": "/assets/paper-of-mind/session-2-integration.jpg"
+    },
+    {
+      "id": "session-3",
+      "label": "Session 3",
+      "title": "Mentalization and Psychic Reality",
+      "theme": "심적 현실, 반성적 기능, 경계선 성격장애의 발달적 뿌리",
+      "image": "/assets/paper-of-mind/session-3-mentalization.jpg"
+    },
+    {
+      "id": "session-4",
+      "label": "Session 4",
+      "title": "Attunement, Trauma, and Repair",
+      "theme": "영아 연구, 조율, 신체화된 트라우마, 치료적 회복",
+      "image": "/assets/paper-of-mind/session-4-attunement.jpg"
+    }
+  ],
+  "papers": [
+    {
+      "slug": "blum-separation-individuation-attachment",
+      "session": "session-1",
+      "accent": "#0f766e",
+      "title": "Separation-Individuation Theory and Attachment Theory",
+      "shortTitle": "분리-개별화와 애착이론",
+      "authorYear": "Harold P. Blum, 2004",
+      "sourceScope": "4Q session 1 paper",
+      "focus": "Mahler와 Bowlby를 대립시키기보다, 애착의 지속성과 자율성 발달을 함께 놓아 정신분석 발달이론을 보강하는 논문입니다.",
+      "expert": {
+        "thesis": "Blum은 분리-개별화 이론과 애착이론이 서로를 폐기하는 경쟁 이론이 아니라, 발달의 서로 다른 축을 설명하는 보완적 틀이라고 정리합니다. 애착은 생존, 안전, 정서조절의 기반을 설명하고, 분리-개별화는 자율성, 정체성, 자기표상의 형성을 설명합니다.",
+        "map": [
+          {
+            "heading": "역사적 위치",
+            "points": [
+              "Mahler의 분리-개별화 이론은 전통적 리비도 이론을 대체하기보다 보완하려는 시도였습니다.",
+              "Bowlby의 애착이론은 정신분석 내부에서 비판을 받았지만, 이후 관찰 연구와 발달심리학을 통해 재평가되었습니다.",
+              "두 이론 모두 초기에는 정통 정신분석의 경계 밖에 있는 것으로 간주되었으나, 현재는 임상 발달 이해를 확장한 자원으로 읽을 수 있습니다."
+            ]
+          },
+          {
+            "heading": "핵심 개념의 차이",
+            "points": [
+              "애착이론은 양육자와의 지속적이고 반응적인 관계가 안전감과 탐색의 전제라고 봅니다.",
+              "분리-개별화 이론은 아이가 대상과 연결된 채로도 자기의 독립성, 경계, 정체성을 발달시켜야 한다고 봅니다.",
+              "Blum은 애착 없는 독립성도, 분리 없는 애착도 발달을 충분히 설명하지 못한다고 봅니다."
+            ]
+          },
+          {
+            "heading": "Mahler 이론의 보정",
+            "points": [
+              "Mahler의 단계 모델은 이후 영아 관찰 연구에 의해 일부 수정이 필요해졌습니다.",
+              "그러나 접근, 거리두기, 재접근, 대상항상성 같은 임상적 문제의식은 여전히 유효합니다.",
+              "특히 재접근기와 자율성 갈등은 성인 치료에서도 의존과 독립의 긴장을 이해하는 언어를 제공합니다."
+            ]
+          },
+          {
+            "heading": "애착이론의 제한",
+            "points": [
+              "애착이론은 안전기지와 관계 안정성을 잘 설명하지만, 자아경계, 자율성, 경쟁, 정체성의 복잡한 구성에는 상대적으로 덜 직접적입니다.",
+              "또한 기질, 성숙, 다중 양육자, 문화적 맥락이 발달에 미치는 영향을 단순화할 위험이 있습니다.",
+              "따라서 애착 유형만으로 임상 환자의 전체 발달사를 환원해서는 안 됩니다."
+            ]
+          }
+        ],
+        "clinicalUse": "의존-독립 갈등, 친밀감과 거리 조절, 치료자에게 붙으려는 욕구와 독립하려는 방어가 교차하는 사례에서 유용합니다. 환자의 애착 욕구를 병리화하지 않으면서도 자율성 획득의 과제를 놓치지 않는 균형 감각을 줍니다.",
+        "cautions": "이 논문은 두 이론을 통합적으로 읽게 하지만, 특정 환자를 단일 단계나 애착 유형으로 분류하는 도식화는 피해야 합니다. 발달이론은 임상 관찰을 조직하는 렌즈이지 진단표가 아닙니다.",
+        "studyQuestions": [
+          "치료 장면에서 환자의 의존 욕구와 분리 욕구가 동시에 나타날 때 어떤 언어로 개념화할 수 있는가?",
+          "애착 안전성과 자율성 발달은 서로 보완되는가, 아니면 때로 긴장하는가?",
+          "Mahler 이론의 단계적 설명을 현대 영아 연구 이후 어떻게 수정해서 사용할 수 있는가?"
+        ]
+      },
+      "public": {
+        "dek": "아이에게 필요한 것은 붙어 있는 관계와 떨어져 나오는 힘입니다. 이 논문은 두 발달 언어를 함께 읽는 법을 제안합니다.",
+        "cards": [
+          {
+            "kicker": "Core",
+            "title": "애착은 안전을, 분리는 자율성을 설명합니다.",
+            "body": "한쪽만으로는 발달을 충분히 설명하기 어렵습니다. 아이는 안전기지를 필요로 하면서도 자기만의 경계를 만들어야 합니다.",
+            "diagram": "Secure base -> exploration -> return -> stronger autonomy"
+          },
+          {
+            "kicker": "Clinical lens",
+            "title": "의존과 독립은 반대말이 아닙니다.",
+            "body": "치료에서 환자는 가까워지고 싶어 하면서도 삼켜질까 두려워할 수 있습니다. 이 긴장을 발달적 언어로 읽어야 합니다.",
+            "diagram": "Closeness <-> distance, held within a continuing relationship"
+          },
+          {
+            "kicker": "Caution",
+            "title": "단계와 유형은 설명 도구일 뿐입니다.",
+            "body": "Mahler의 단계도 Bowlby의 애착도 환자를 딱지 붙이는 분류표가 아닙니다. 복잡한 관계사를 읽는 지도입니다.",
+            "diagram": "Theory as map, not label"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "bretherton-origins-attachment-theory",
+      "session": "session-1",
+      "accent": "#295f98",
+      "title": "The Origins of Attachment Theory: John Bowlby and Mary Ainsworth",
+      "shortTitle": "애착이론의 기원",
+      "authorYear": "Inge Bretherton, 1992",
+      "sourceScope": "4Q session 1 paper",
+      "focus": "Bowlby와 Ainsworth의 별도 기여가 어떻게 애착이론이라는 공동 프로그램으로 결합되었는지 보여주는 역사적 정리입니다.",
+      "expert": {
+        "thesis": "Bretherton은 애착이론이 한 사람의 사변이 아니라 Bowlby의 임상적 문제의식, 동물행동학과 통제체계 이론, Ainsworth의 자연관찰과 Strange Situation 연구가 결합되어 형성된 연구 프로그램이라고 설명합니다.",
+        "map": [
+          {
+            "heading": "Bowlby의 문제의식",
+            "points": [
+              "Bowlby는 모성 상실, 분리, 박탈 경험이 이후 성격 발달에 어떤 영향을 미치는지에 관심을 두었습니다.",
+              "그는 정신분석만으로 설명하기 어려운 실제 양육자-아동 관계의 기능을 강조했습니다.",
+              "애착행동은 단순한 의존이나 2차적 욕구가 아니라 생존과 보호를 위한 조직화된 행동체계로 이해됩니다."
+            ]
+          },
+          {
+            "heading": "Ainsworth의 경험 연구",
+            "points": [
+              "Ainsworth는 Uganda와 Baltimore 연구를 통해 영아-양육자 관계를 세밀하게 관찰했습니다.",
+              "민감한 반응성과 안정 애착의 관련성을 경험적으로 보여주었습니다.",
+              "Strange Situation은 애착의 질을 비교 가능한 연구 절차로 만들었습니다."
+            ]
+          },
+          {
+            "heading": "이론적 혁신",
+            "points": [
+              "애착이론은 정신분석, 동물행동학, 인지적 표상 개념, 통제체계 이론을 결합했습니다.",
+              "안전기지는 아이가 세계를 탐색할 수 있게 하는 관계적 기반입니다.",
+              "내적 작동모델은 자기와 타인, 관계의 예측 가능성에 대한 발달적 표상입니다."
+            ]
+          },
+          {
+            "heading": "현재적 의미",
+            "points": [
+              "애착 연구는 부모-영아 관계, 성인 애착, 정신병리, 세대 간 전이를 이해하는 핵심 틀이 되었습니다.",
+              "역사적 기원을 알면 애착이론을 단순한 유형론이 아니라 관찰, 임상, 발달 연구의 결합체로 읽을 수 있습니다."
+            ]
+          }
+        ],
+        "clinicalUse": "내담자의 관계 기대가 어디서 왔는지, 안전기지 경험이 어떻게 결핍되거나 왜곡되었는지, 치료 관계가 어떤 탐색 기반을 제공할 수 있는지 생각하게 합니다.",
+        "cautions": "애착이론을 Bowlby 한 사람의 이론으로 축소하거나 Strange Situation의 유형만 기억하면 핵심을 놓칩니다. 이 논문은 이론 형성의 역사와 연구 방법의 중요성을 함께 읽어야 합니다.",
+        "studyQuestions": [
+          "Bowlby의 임상적 문제의식과 Ainsworth의 관찰 연구는 어떻게 서로를 보완하는가?",
+          "안전기지 개념은 성인 치료 관계에 어떻게 번역될 수 있는가?",
+          "내적 작동모델은 방어, 전이, 대상관계 개념과 어떤 접점을 갖는가?"
+        ]
+      },
+      "public": {
+        "dek": "애착이론은 ‘엄마와 아이’에 관한 단순한 이야기가 아니라, 안전을 바탕으로 세상을 탐색하는 인간 발달의 이론입니다.",
+        "cards": [
+          {
+            "kicker": "Origin",
+            "title": "애착이론은 임상과 관찰이 만난 결과입니다.",
+            "body": "Bowlby는 분리와 상실의 영향을 물었고, Ainsworth는 실제 영아-양육자 관계를 관찰했습니다.",
+            "diagram": "Clinical question + natural observation -> attachment theory"
+          },
+          {
+            "kicker": "Key idea",
+            "title": "안전기지는 탐색을 가능하게 합니다.",
+            "body": "아이는 안전한 관계가 있을 때 멀리 나가 보고, 다시 돌아오고, 더 넓은 세계를 배웁니다.",
+            "diagram": "Safe base -> exploration -> return"
+          },
+          {
+            "kicker": "Study note",
+            "title": "애착 유형보다 중요한 것은 관계의 기능입니다.",
+            "body": "분류 자체보다 아이가 위험, 분리, 재결합을 어떻게 조직하는지 보는 것이 핵심입니다.",
+            "diagram": "Behavior pattern -> relationship expectation"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "fonagy-1999-psychoanalysis-attachment",
+      "session": "session-2",
+      "accent": "#9f3434",
+      "title": "Points of Contact and Divergence Between Psychoanalytic and Attachment Theories",
+      "shortTitle": "정신분석과 애착이론의 접점",
+      "authorYear": "Peter Fonagy, 1999",
+      "sourceScope": "4Q session 2 paper",
+      "focus": "정신분석과 애착이론이 서로를 오해해온 지점을 정리하고, 표상·방어·내적 작동모델을 매개로 통합 가능성을 탐색합니다.",
+      "expert": {
+        "thesis": "Fonagy는 정신분석과 애착이론이 단순히 경쟁 관계가 아니며, 애착이론은 경험적 명료성과 관계 행동의 조직을 제공하고 정신분석은 내적 갈등, 방어, 환상, 의미의 복잡성을 제공한다고 봅니다.",
+        "map": [
+          {
+            "heading": "오랜 긴장",
+            "points": [
+              "Bowlby 이후 정신분석계는 애착이론을 기계적이고 비역동적인 이론으로 비판했습니다.",
+              "애착 연구는 반대로 정신분석이 경험적으로 불명료하다고 보았습니다.",
+              "Fonagy는 이 대립이 생산적 통합을 방해했다고 봅니다."
+            ]
+          },
+          {
+            "heading": "애착이론의 강점",
+            "points": [
+              "애착이론은 양육자 행동, 아이의 반응, 관계 표상을 관찰 가능한 형태로 조직합니다.",
+              "내적 작동모델은 반복되는 관계 기대와 주의 배분을 설명합니다.",
+              "성인애착면접의 일관성 개념은 표상의 조직과 세대 간 전이를 탐색하게 합니다."
+            ]
+          },
+          {
+            "heading": "정신분석이 보태는 것",
+            "points": [
+              "정신분석은 내적 표상이 단일하지 않고 갈등적이며 방어적으로 조직될 수 있음을 보여줍니다.",
+              "애착 유형만으로는 공격성, 성적 환상, 무의식적 의미, 전이의 미세한 변형을 충분히 다루기 어렵습니다.",
+              "특히 해리, 분열, 투사적 과정은 단순한 행동 범주보다 깊은 임상 언어가 필요합니다."
+            ]
+          },
+          {
+            "heading": "통합의 방향",
+            "points": [
+              "애착이론은 정신분석적 통찰을 경험 연구와 연결할 수 있습니다.",
+              "정신분석은 애착 연구의 범주를 임상적으로 풍부하게 해석할 수 있습니다.",
+              "핵심 매개는 관계 경험이 어떻게 표상, 정서조절, 자기이해로 내면화되는가입니다."
+            ]
+          }
+        ],
+        "clinicalUse": "성인 환자의 애착 양식을 관찰하되, 그것이 전이, 방어, 무의식적 환상, 자기표상과 어떻게 결합되는지 함께 보게 합니다. 애착 범주는 출발점이고, 분석적 듣기는 그 범주 안의 복잡성을 읽는 과정입니다.",
+        "cautions": "애착이론을 경험적 연구라서 더 우월하다고 보거나, 정신분석을 임상적으로 깊으니 충분하다고 보는 양쪽 환원 모두 피해야 합니다.",
+        "studyQuestions": [
+          "내적 작동모델은 대상관계 표상과 같은가, 다른가?",
+          "애착 유형을 임상에서 사용할 때 어떤 정보가 빠지기 쉬운가?",
+          "정신분석적 방어 개념은 disorganized attachment를 어떻게 더 풍부하게 설명할 수 있는가?"
+        ]
+      },
+      "public": {
+        "dek": "애착이론은 관계의 패턴을 보여주고, 정신분석은 그 패턴 안의 숨은 의미를 읽게 합니다.",
+        "cards": [
+          {
+            "kicker": "Bridge",
+            "title": "관찰 가능한 관계와 보이지 않는 의미를 함께 봅니다.",
+            "body": "애착 연구는 패턴을, 정신분석은 갈등과 방어를 설명합니다. 둘은 서로의 빈칸을 채웁니다.",
+            "diagram": "Attachment pattern + unconscious meaning -> clinical formulation"
+          },
+          {
+            "kicker": "Representation",
+            "title": "관계 경험은 마음속 모델이 됩니다.",
+            "body": "우리는 타인이 나를 어떻게 대할지 예측하는 내부 지도를 갖고 살아갑니다.",
+            "diagram": "Caregiving history -> internal working model -> expectation"
+          },
+          {
+            "kicker": "Clinical",
+            "title": "유형보다 중요한 것은 그 유형이 어떻게 살아나는가입니다.",
+            "body": "치료실에서 애착은 말투, 침묵, 거리, 기대, 실망의 방식으로 나타납니다.",
+            "diagram": "Category -> transference scene -> therapeutic work"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "slade-attachment-psychoanalysis",
+      "session": "session-2",
+      "accent": "#b45309",
+      "title": "The Development and Organization of Attachment: Implications for Psychoanalysis",
+      "shortTitle": "애착 발달과 정신분석 임상",
+      "authorYear": "Arietta Slade, 2000",
+      "sourceScope": "4Q session 2 paper",
+      "focus": "애착이론의 기본 전제를 정신분석적 임상 듣기와 연결하며, 성인·아동 치료에서 애착을 어떻게 들을 것인지 설명합니다.",
+      "expert": {
+        "thesis": "Slade는 Bowlby 이후 갈라졌던 애착 연구와 정신분석이 다시 만나야 한다고 주장합니다. 애착은 단지 발달 연구의 주제가 아니라 치료 관계에서 안전, 방어, 정서조절, 기억, 자기 경험을 조직하는 임상적 축입니다.",
+        "map": [
+          {
+            "heading": "애착이론의 기본 전제",
+            "points": [
+              "아기는 양육자와의 관계를 형성하고 유지하도록 강하게 동기화되어 있습니다.",
+              "아이는 관계를 보존하기 위해 고통스러운 정서와 기억을 방어적으로 조직할 수 있습니다.",
+              "애착 패턴은 관계 경험의 반복 속에서 발달하며 이후 관계를 예측하고 해석하는 틀이 됩니다."
+            ]
+          },
+          {
+            "heading": "정신분석과의 수렴",
+            "points": [
+              "현대 정신분석은 실제 관계, 상호조절, 전이-역전이의 상호성을 더 중요하게 보게 되었습니다.",
+              "애착 연구는 임상가에게 관계 패턴을 더 구체적으로 들을 수 있는 언어를 줍니다.",
+              "정신분석은 애착 패턴이 내면의 의미와 방어 속에서 어떻게 변형되는지 보여줍니다."
+            ]
+          },
+          {
+            "heading": "치료 장면에서 듣기",
+            "points": [
+              "Dismissing 양식에서는 관계의 중요성이 축소되고 정서가 지적으로 처리될 수 있습니다.",
+              "Preoccupied 양식에서는 관계 경험이 압도적이고 정리되지 않은 방식으로 반복될 수 있습니다.",
+              "Disorganized 양식에서는 두려움의 근원이 보호자와 연결되어 접근과 회피가 동시에 나타날 수 있습니다."
+            ]
+          },
+          {
+            "heading": "치료자의 기능",
+            "points": [
+              "치료자는 단순히 안정기지가 되는 것이 아니라, 환자가 자신의 관계 경험을 생각할 수 있게 하는 제3의 공간을 제공합니다.",
+              "아동 치료에서는 놀이와 부모-아동 관계를 함께 보아야 합니다.",
+              "성인 치료에서는 내담자의 애착 서사가 치료 관계 안에서 어떻게 현재화되는지 관찰해야 합니다."
+            ]
+          }
+        ],
+        "clinicalUse": "세션에서 환자의 이야기 내용뿐 아니라 관계를 말하는 방식, 감정 접근성, 기억의 일관성, 치료자와의 거리 조절을 함께 평가하는 데 유용합니다.",
+        "cautions": "애착 분류는 임상적 귀를 돕지만, 내담자를 하나의 범주에 고정하면 치료적 호기심이 줄어듭니다. 분류보다 조직 방식과 변화 가능성에 주목해야 합니다.",
+        "studyQuestions": [
+          "치료자는 환자의 애착 패턴을 언제 해석하고 언제 담아주어야 하는가?",
+          "애착 이야기를 ‘내용’이 아니라 ‘말하는 방식’으로 듣는다는 것은 무엇인가?",
+          "아동 치료에서 부모의 반성적 기능은 어떤 방식으로 개입 대상이 되는가?"
+        ]
+      },
+      "public": {
+        "dek": "치료실에서 애착은 과거 이야기가 아니라 지금 관계를 맺는 방식으로 나타납니다.",
+        "cards": [
+          {
+            "kicker": "Listening",
+            "title": "무엇을 말하는가보다 어떻게 관계를 말하는가를 듣습니다.",
+            "body": "정서가 사라지는지, 압도되는지, 앞뒤가 무너지는지에 따라 애착 조직을 읽을 수 있습니다.",
+            "diagram": "Story content + emotional access + coherence"
+          },
+          {
+            "kicker": "Therapy",
+            "title": "치료자는 안전기지이자 생각하는 공간입니다.",
+            "body": "좋은 치료 관계는 환자가 관계 경험을 다시 느끼고, 이번에는 생각할 수 있게 합니다.",
+            "diagram": "Safety -> reflection -> new relational choice"
+          },
+          {
+            "kicker": "Caution",
+            "title": "분류는 시작이지 결론이 아닙니다.",
+            "body": "애착 범주는 사람을 고정하기 위한 말이 아니라 변화를 관찰하기 위한 임상 언어입니다.",
+            "diagram": "Classification -> formulation -> treatment"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "fonagy-target-playing-with-reality",
+      "session": "session-3",
+      "accent": "#6d4c8d",
+      "title": "Playing With Reality: Theory of Mind and the Normal Development of Psychic Reality",
+      "shortTitle": "심적 현실과 마음이론",
+      "authorYear": "Peter Fonagy & Mary Target, 1996",
+      "sourceScope": "4Q session 3 paper",
+      "focus": "아이의 심적 현실 이해가 psychic equivalence와 pretend mode에서 reflective mode로 통합되는 발달 과정을 설명합니다.",
+      "expert": {
+        "thesis": "Fonagy와 Target은 아동이 내적 현실과 외적 현실을 구분하고 연결하는 능력을 발달시키는 과정을 정신화의 핵심으로 설명합니다. 아주 어린 아이는 심적 등가 모드와 가장 모드를 오가며, 충분한 관계적 경험과 놀이를 통해 반성적 모드로 통합합니다.",
+        "map": [
+          {
+            "heading": "두 가지 초기 모드",
+            "points": [
+              "Psychic equivalence에서는 마음속 느낌과 외부 현실이 거의 같은 것으로 경험됩니다.",
+              "Pretend mode에서는 놀이와 상상이 현실과 분리되어 있지만, 실제 정서와 연결되지 않을 수 있습니다.",
+              "두 모드는 모두 정상 발달의 일부이지만 통합되지 않으면 병리적 양상으로 굳을 수 있습니다."
+            ]
+          },
+          {
+            "heading": "Reflective mode의 형성",
+            "points": [
+              "아이는 타인도 자기와 다른 마음을 가진다는 것을 점차 이해합니다.",
+              "정서 이해가 인지적 마음 이해보다 먼저 발달한다는 점이 중요합니다.",
+              "대략 4세 무렵 마음이론의 전환이 이루어지지만, 실제 통합은 관계 경험에 의존합니다."
+            ]
+          },
+          {
+            "heading": "놀이와 분석 장면",
+            "points": [
+              "놀이는 내적 현실을 외부화하면서도 그것이 현실 자체가 아니라는 표시를 제공합니다.",
+              "분석가는 아이가 두 모드를 오가며 더 통합된 의미를 만들 수 있도록 돕습니다.",
+              "논문은 4세 아동의 분석 자료를 통해 이 전환이 저항과 불안 속에서 어떻게 다루어지는지 보여줍니다."
+            ]
+          },
+          {
+            "heading": "병리 이해",
+            "points": [
+              "심적 등가가 과도하면 느낌이 사실처럼 굳어져 공포와 확신이 강해질 수 있습니다.",
+              "가장 모드가 분리되면 말과 상상이 실제 정서 경험과 연결되지 않는 공허함이 생길 수 있습니다.",
+              "반성적 기능의 실패는 성인 병리와도 연결됩니다."
+            ]
+          }
+        ],
+        "clinicalUse": "환자가 ‘느낌은 사실’처럼 말하는지, 혹은 말은 풍부하지만 정서적 실재감이 없는지 구분하는 데 유용합니다. 치료의 목표는 내적 경험을 부정하는 것이 아니라, 그것을 생각 가능한 경험으로 바꾸는 것입니다.",
+        "cautions": "정신화 개념을 인지적 기술로만 이해하면 논문의 핵심을 놓칩니다. 여기서 정신화는 정서, 관계, 놀이, 상징화가 결합된 발달 성취입니다.",
+        "studyQuestions": [
+          "심적 등가 모드와 가장 모드는 성인 치료에서 각각 어떤 모습으로 나타나는가?",
+          "치료자는 환자의 느낌을 존중하면서도 그것이 현실 전체가 아님을 어떻게 다룰 수 있는가?",
+          "놀이와 상징화는 왜 정신화 발달에 중요한가?"
+        ]
+      },
+      "public": {
+        "dek": "아이의 마음은 ‘내가 느끼면 사실’에서 ‘느낌과 현실을 함께 생각하기’로 발달합니다.",
+        "cards": [
+          {
+            "kicker": "Mode 1",
+            "title": "심적 등가: 느낌이 곧 사실이 되는 순간",
+            "body": "어린 아이에게 무서운 생각은 실제 위험처럼 느껴질 수 있습니다. 마음과 현실의 거리가 아직 충분히 생기지 않았기 때문입니다.",
+            "diagram": "Feeling = reality"
+          },
+          {
+            "kicker": "Mode 2",
+            "title": "가장 모드: 현실과 분리된 상상의 공간",
+            "body": "놀이는 안전한 거리에서 마음을 다루게 하지만, 정서와 완전히 끊기면 공허한 말이 될 수 있습니다.",
+            "diagram": "Pretend space || real feeling"
+          },
+          {
+            "kicker": "Integration",
+            "title": "성장은 마음을 생각할 수 있게 되는 과정입니다.",
+            "body": "반성적 모드에서는 내 마음과 타인의 마음, 느낌과 현실을 동시에 바라볼 수 있습니다.",
+            "diagram": "Feeling + reality + other mind -> reflection"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "fonagy-developmental-roots-bpd",
+      "session": "session-3",
+      "accent": "#0f766e",
+      "title": "The Developmental Roots of Borderline Personality Disorder in Early Attachment Relationships",
+      "shortTitle": "BPD의 발달적 뿌리",
+      "authorYear": "Fonagy, Target, Gergely, Allen & Bateman, 2003",
+      "sourceScope": "4Q session 3 paper",
+      "focus": "경계선 성격장애를 안정기지 실패와 정신화 발달의 손상이라는 관점에서 설명하는 이론적·임상적 논문입니다.",
+      "expert": {
+        "thesis": "이 논문은 BPD를 단순한 증상 묶음이 아니라 초기 애착관계에서 안전기지와 정신화 발달이 충분히 마련되지 못한 결과로 이해합니다. 취약성이 있는 아이가 외상과 불안정 애착을 경험할 때, 자기와 타인의 마음을 안정적으로 표상하고 조절하는 능력이 손상될 수 있습니다.",
+        "map": [
+          {
+            "heading": "안정 애착과 최적 자기 발달",
+            "points": [
+              "안정 애착은 아이가 자신의 정서와 타인의 마음을 생각할 수 있게 하는 관계적 환경을 제공합니다.",
+              "양육자의 표시된 반영은 아이가 자기 상태를 알아차리고 조절하는 데 중요합니다.",
+              "정신화 능력은 이후 외상에 대한 회복탄력성을 높이는 핵심 보호 요인입니다."
+            ]
+          },
+          {
+            "heading": "BPD와 정신화 실패",
+            "points": [
+              "BPD에서는 스트레스 상황에서 정신화가 쉽게 무너지고, 타인의 의도와 자기 상태가 과격하게 해석될 수 있습니다.",
+              "자기 경험은 불안정하고, 타자는 위협적이거나 버려질 가능성이 큰 대상으로 경험될 수 있습니다.",
+              "관계 안에서 주의 조절, 정서조절, 충동조절의 어려움이 함께 나타납니다."
+            ]
+          },
+          {
+            "heading": "외상과 애착의 결합",
+            "points": [
+              "외상 자체만이 아니라, 외상을 처리해줄 안전한 관계가 부재할 때 손상이 커집니다.",
+              "두려움의 대상이 보호자일 때 아이는 접근과 회피 사이의 해결 불가능한 딜레마에 놓입니다.",
+              "유전적·기질적 취약성과 관계 환경은 상호작용합니다."
+            ]
+          },
+          {
+            "heading": "치료적 함의",
+            "points": [
+              "치료는 환자가 마음상태를 다시 생각할 수 있는 안정적 조건을 만드는 데 초점을 둡니다.",
+              "강한 정서가 올라올 때 해석을 밀어붙이기보다 정신화가 회복될 수 있는 속도를 조절해야 합니다.",
+              "Mentalization-based treatment의 이론적 토대가 여기서 분명해집니다."
+            ]
+          }
+        ],
+        "clinicalUse": "BPD 환자의 위기, 버림받음 공포, 관계적 격렬함을 ‘조작’이나 ‘과잉반응’으로 보지 않고, 정신화 붕괴와 애착 위협의 관점에서 이해하게 합니다.",
+        "cautions": "BPD를 초기 양육 실패로 단순 환원하면 안 됩니다. 논문은 유전적 취약성, 외상, 애착 환경, 정신화 발달의 상호작용을 강조합니다.",
+        "studyQuestions": [
+          "정신화가 무너지는 순간 치료자는 어떤 개입을 줄이고 어떤 개입을 늘려야 하는가?",
+          "안정기지 실패는 BPD의 어떤 증상을 설명하는 데 특히 유용한가?",
+          "외상과 애착 불안정성을 구분하면서도 연결해서 보는 방법은 무엇인가?"
+        ]
+      },
+      "public": {
+        "dek": "경계선 성격장애를 이해하는 한 가지 열쇠는 ‘마음을 생각할 수 있는 안전한 관계’가 어떻게 무너졌는가입니다.",
+        "cards": [
+          {
+            "kicker": "Secure base",
+            "title": "안전한 관계는 마음을 생각하게 합니다.",
+            "body": "아이는 누군가가 자기 마음을 알아차려줄 때, 자기 감정을 견디고 이해하는 법을 배웁니다.",
+            "diagram": "Attuned caregiver -> marked reflection -> self-understanding"
+          },
+          {
+            "kicker": "Stress",
+            "title": "스트레스가 높아지면 정신화가 무너질 수 있습니다.",
+            "body": "관계 위협이 커지면 타인의 의도와 자기 감정이 극단적으로 해석되기 쉽습니다.",
+            "diagram": "Attachment threat -> mentalization collapse -> crisis"
+          },
+          {
+            "kicker": "Treatment",
+            "title": "치료는 다시 생각할 수 있는 속도를 회복하는 일입니다.",
+            "body": "핵심은 환자가 감정에 압도되지 않고 자기와 타인의 마음을 다시 볼 수 있게 돕는 것입니다.",
+            "diagram": "Pause -> name state -> consider other mind"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "beebe-origins-attachment-infant-research",
+      "session": "session-4",
+      "accent": "#295f98",
+      "title": "The Origins of Attachment: Infant Research and Adult Treatment",
+      "shortTitle": "영아 연구와 성인 치료",
+      "authorYear": "Beatrice Beebe & Frank M. Lachmann, 2013",
+      "sourceScope": "4Q session 4 paper",
+      "focus": "초 단위 미시분석을 통해 영아-양육자 상호조절, 불일치와 수리, disorganized attachment의 전조를 성인 치료와 연결합니다.",
+      "expert": {
+        "thesis": "Beebe와 Lachmann은 애착의 기원을 정적인 양육 태도가 아니라 얼굴, 시선, 리듬, 정서의 미세한 상호조절 속에서 찾습니다. 안정 애착은 완벽한 일치가 아니라 적절한 조율, 불일치, 그리고 수리의 반복 속에서 만들어집니다.",
+        "map": [
+          {
+            "heading": "미시분석의 관점",
+            "points": [
+              "영아와 양육자의 상호작용은 초 단위로 조율되고 어긋납니다.",
+              "얼굴표정, 시선, 몸의 방향, 정서 강도, 리듬이 관계의 질을 형성합니다.",
+              "관계는 한 사람의 행동이 아니라 dyad의 상호조절 체계로 이해됩니다."
+            ]
+          },
+          {
+            "heading": "안정 애착의 핵심",
+            "points": [
+              "안정성은 항상 맞아주는 완벽한 조율이 아니라, 어긋난 뒤 다시 맞춰지는 수리 경험을 포함합니다.",
+              "아이는 관계가 흔들려도 다시 회복될 수 있다는 절차적 기대를 배웁니다.",
+              "이 기대는 이후 친밀한 관계와 치료 관계의 암묵적 패턴으로 이어집니다."
+            ]
+          },
+          {
+            "heading": "Disorganized attachment",
+            "points": [
+              "Disorganized dyad에서는 아이가 접근과 회피를 조직하기 어려운 모순적 신호를 경험할 수 있습니다.",
+              "양육자의 unresolved loss나 trauma는 아이와의 상호조절에 혼란을 만들 수 있습니다.",
+              "문제는 특정 순간의 실수보다 반복되는 예측 불가능성과 수리 실패입니다."
+            ]
+          },
+          {
+            "heading": "성인 치료와의 연결",
+            "points": [
+              "성인 치료에서도 말의 내용뿐 아니라 리듬, 타이밍, 정서적 맞물림, 역전이 반응이 중요합니다.",
+              "치료자는 환자와의 미세한 불일치와 수리를 통해 새로운 절차적 관계 경험을 제공합니다.",
+              "비언어적 상호작용은 해석 이전의 치료적 기반이 될 수 있습니다."
+            ]
+          }
+        ],
+        "clinicalUse": "세션의 말뿐 아니라 시선, 침묵, 말 속도, 감정의 진폭, 치료자의 미세한 반응을 관찰하게 합니다. 특히 트라우마와 초기관계 문제가 있는 환자에게 ‘수리 가능한 관계’의 경험을 제공하는 데 중요합니다.",
+        "cautions": "미시분석은 부모를 비난하기 위한 도구가 아닙니다. 관계의 작은 순간을 정밀하게 보되, 맥락·상실·외상·치료 가능성을 함께 보아야 합니다.",
+        "studyQuestions": [
+          "치료 장면에서 rupture와 repair는 언어적 해석 이전에 어떻게 일어나는가?",
+          "안정 애착을 완벽한 조율이 아니라 수리의 반복으로 이해하면 임상 태도가 어떻게 달라지는가?",
+          "비언어적 상호조절을 기록하거나 회상할 때 어떤 단서를 볼 수 있는가?"
+        ]
+      },
+      "public": {
+        "dek": "관계는 큰 사건만으로 만들어지지 않습니다. 눈빛, 리듬, 어긋남과 회복의 작은 순간들이 애착을 만듭니다.",
+        "cards": [
+          {
+            "kicker": "Micro",
+            "title": "애착은 초 단위로 만들어집니다.",
+            "body": "표정, 시선, 목소리, 리듬이 서로 맞고 어긋나는 순간들이 관계의 기억이 됩니다.",
+            "diagram": "Face -> rhythm -> affect -> expectation"
+          },
+          {
+            "kicker": "Repair",
+            "title": "완벽한 조율보다 중요한 것은 수리입니다.",
+            "body": "좋은 관계는 한 번도 어긋나지 않는 관계가 아니라, 어긋난 뒤 다시 만날 수 있는 관계입니다.",
+            "diagram": "Mismatch -> repair -> trust"
+          },
+          {
+            "kicker": "Therapy",
+            "title": "치료실에서도 리듬이 치료합니다.",
+            "body": "말의 내용뿐 아니라 치료자와 환자가 함께 만드는 타이밍과 정서적 맞물림이 중요합니다.",
+            "diagram": "Session rhythm -> felt safety -> new procedure"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "van-der-kolk-attachment-attunement",
+      "session": "session-4",
+      "accent": "#b45309",
+      "title": "The Body Keeps the Score, Chapter 7: Getting on the Same Wavelength",
+      "shortTitle": "애착, 조율, 신체화된 트라우마",
+      "authorYear": "Bessel van der Kolk, 2015",
+      "sourceScope": "4Q session 4 paper",
+      "focus": "트라우마가 애착, 정서조절, 몸의 반응, 자기감각에 미치는 영향을 임상 장면과 발달 연구를 통해 설명합니다.",
+      "expert": {
+        "thesis": "van der Kolk는 회복탄력성의 뿌리가 사랑스럽고 조율된 타인의 마음속에 존재한다는 감각에 있다고 봅니다. 학대와 방임은 아이의 행동 문제가 아니라 안전, 탐색, 정서조절, 자기감각의 발달을 신체 수준에서 흔듭니다.",
+        "map": [
+          {
+            "heading": "트라우마 아동의 양상",
+            "points": [
+              "학대받은 아이들은 공격성, 과각성, 회피, 집착, 자기손상, 놀이의 어려움 등 다양한 양상을 보일 수 있습니다.",
+              "표면적 진단은 ADHD, 품행문제, 반항장애 등으로 흩어질 수 있지만, 핵심에는 조율과 안전의 결핍이 있을 수 있습니다.",
+              "아이의 몸은 위험에 맞춰진 상태로 살아가며, 평범한 자극도 위협으로 읽을 수 있습니다."
+            ]
+          },
+          {
+            "heading": "조율과 회복탄력성",
+            "points": [
+              "안정 애착은 아이가 자기 감정을 조절하고 세계를 탐색할 수 있는 내적 기반을 만듭니다.",
+              "조율된 타인은 아이가 이해받고 존재한다고 느끼게 해줍니다.",
+              "능력감과 안전한 관계는 internal locus of control의 토대가 됩니다."
+            ]
+          },
+          {
+            "heading": "Disorganized attachment와 해결 불가능한 딜레마",
+            "points": [
+              "보호자가 동시에 두려움의 원천일 때 아이는 가까이 가야 하고 피해야 하는 모순 속에 놓입니다.",
+              "이때 행동은 이상하거나 혼란스러워 보일 수 있지만, 아이의 체계 안에서는 살아남기 위한 반응입니다.",
+              "부모 자신의 미해결 외상도 아이와의 관계에 영향을 미칠 수 있습니다."
+            ]
+          },
+          {
+            "heading": "치료적 방향",
+            "points": [
+              "트라우마 치료는 말로 설명하는 것만으로 충분하지 않고 몸, 리듬, 안전, 관계를 함께 다루어야 합니다.",
+              "아이는 먼저 안전을 느끼고, 조절을 경험하고, 자기 몸과 감정에 대한 감각을 회복해야 합니다.",
+              "증상을 통제하기보다 생존전략을 이해하고 새 조절 경험을 제공하는 것이 중요합니다."
+            ]
+          }
+        ],
+        "clinicalUse": "트라우마 환자의 증상을 ‘문제행동’으로만 보지 않고, 안전 결핍과 신체화된 경계 상태의 관점에서 이해하게 합니다. 특히 아동·청소년 사례에서 진단명을 넘어 애착과 조절의 역사를 묻는 데 유용합니다.",
+        "cautions": "대중적으로 널리 읽히는 책의 장이므로 임상적 직관이 강하지만, 세부 주장은 연구 논문과 함께 교차 확인하는 것이 좋습니다. 또한 트라우마 설명이 모든 증상을 단일 원인으로 환원하지 않도록 주의해야 합니다.",
+        "studyQuestions": [
+          "트라우마 아동의 행동을 증상 목록이 아니라 조절 전략으로 보면 무엇이 달라지는가?",
+          "치료에서 몸의 안전감과 관계적 안전감은 어떻게 함께 다루어질 수 있는가?",
+          "disorganized attachment의 딜레마는 성인 관계에서 어떤 반복으로 나타나는가?"
+        ]
+      },
+      "public": {
+        "dek": "트라우마는 머릿속 기억만이 아니라 몸의 경계, 관계의 기대, 자기감각에 남습니다.",
+        "cards": [
+          {
+            "kicker": "Body",
+            "title": "몸은 위험을 기억합니다.",
+            "body": "트라우마를 겪은 아이는 평범한 상황에서도 몸이 먼저 위험 신호를 켤 수 있습니다.",
+            "diagram": "Past threat -> body alarm -> present reaction"
+          },
+          {
+            "kicker": "Attachment",
+            "title": "회복의 뿌리는 조율된 관계입니다.",
+            "body": "이해받고 존재한다고 느끼는 경험은 아이가 자기 감정을 조절하는 토대가 됩니다.",
+            "diagram": "Attuned other -> felt safety -> regulation"
+          },
+          {
+            "kicker": "Repair",
+            "title": "치료는 몸과 관계가 함께 안전해지는 과정입니다.",
+            "body": "말로 설명하는 것만으로는 부족할 수 있습니다. 리듬, 신뢰, 감각, 능력감을 함께 회복해야 합니다.",
+            "diagram": "Safety + rhythm + competence -> resilience"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -55,6 +55,10 @@ export async function loadIssues() {
   return issues.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
 }
 
+export async function loadPaperOfMind() {
+  return readJson(path.join(contentDir, "paper-of-mind.json"));
+}
+
 export function normalizeIssue(issue) {
   return {
     status: "draft",
