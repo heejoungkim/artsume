@@ -24,6 +24,8 @@ await resetDir(distDir);
 await copyProjectAssets();
 await writeText(path.join(distDir, "assets/styles.css"), styles());
 await writeText(path.join(distDir, "index.html"), renderHome(site, issues, paperOfMind));
+await writeText(path.join(distDir, "copyright", "index.html"), renderCopyrightPage(site));
+await writeText(path.join(distDir, "robots.txt"), renderRobotsTxt());
 
 for (const issue of issues) {
   await writeText(path.join(distDir, "issues", issue.id, "index.html"), renderIssue(site, issue, issues));
@@ -340,6 +342,7 @@ function renderPaperIndex(site, paperOfMind) {
           <p>${escapeHtml(paperOfMind.subtitle)}</p>
           <aside>${escapeHtml(paperOfMind.description)}</aside>
         </header>
+        ${renderRightsGuard("/paper-of-mind/")}
         <section class="paper-session-grid" aria-label="Paper sessions">
           ${paperOfMind.sessions.map((session) => renderSessionBlock(session, paperOfMind, currentPath)).join("")}
         </section>
@@ -417,7 +420,8 @@ function renderPaperPage(site, paperOfMind, paper) {
           </header>
 
           <section class="copyright-note">
-            <p>원문 PDF는 재게시하지 않습니다. 이 페이지는 수업과 공개 공유를 위한 변형 요약이며, 직접 인용 없이 논지와 임상적 함의를 재구성했습니다.</p>
+            <p>원문 PDF와 원문 전문은 재게시하지 않습니다. 이 페이지는 수업과 공개 공유를 위한 변형 요약이며, 직접 인용 없이 논지와 임상적 함의를 재구성했습니다.</p>
+            <a href="${href(currentPath, "/copyright/")}">저작권 보호 원칙 보기</a>
           </section>
 
           <section class="source-register" aria-labelledby="source-register-title">
@@ -507,7 +511,7 @@ function renderExpertDownload(paperOfMind, paper) {
     "",
     "## 저작권 메모",
     "",
-    "원문 PDF를 재게시하지 않습니다. 이 파일은 학습과 토론을 위한 변형 요약이며, 직접 인용 없이 논지와 임상적 함의를 재구성한 자료입니다.",
+    "원문 PDF와 원문 전문을 재게시하지 않습니다. 이 파일은 학습과 토론을 위한 변형 요약이며, 직접 인용 없이 논지와 임상적 함의를 재구성한 자료입니다. 원저작물을 대체하지 않도록 출처 확인과 원문 독해를 전제로 사용해야 합니다.",
     "",
     "## 출처",
     "",
@@ -542,6 +546,98 @@ function renderExpertDownload(paperOfMind, paper) {
     ...paper.expert.studyQuestions.map((question, index) => `${index + 1}. ${question}`),
     ""
   ].join("\n");
+}
+
+function renderCopyrightPage(site) {
+  const currentPath = "/copyright/";
+  return page({
+    site,
+    title: `Copyright | ${site.title}`,
+    description: "Artsume copyright and source-use policy.",
+    pathName: currentPath,
+    body: `
+      <main class="rights-page">
+        <nav class="breadcrumb"><a href="${href(currentPath, "/")}">Issues</a><span>Copyright</span></nav>
+        <header class="rights-hero">
+          <p class="eyebrow">Copyright policy</p>
+          <h1>저작권 보호 원칙</h1>
+          <p>Artsume은 원저작물을 대체하지 않는 학습용 변형 요약과 공개 카드뉴스를 제공합니다.</p>
+        </header>
+
+        <section class="rights-grid">
+          <article>
+            <span>01</span>
+            <h2>원문을 올리지 않습니다.</h2>
+            <p>논문 PDF, 원문 전문, 긴 인용문, 원문을 실질적으로 대체할 수 있는 상세 복제물은 저장소와 배포 산출물에 포함하지 않습니다.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h2>요약은 변형 자료입니다.</h2>
+            <p>공개 페이지는 한국어 해설, 구조화된 학습 노트, 임상적 함의, 토론 질문으로 재구성합니다. 원문 문장이나 도표를 그대로 옮기지 않습니다.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h2>출처를 명확히 표시합니다.</h2>
+            <p>각 세션과 개별 paper 페이지에는 구성에 사용된 저자, 연도, 논문 제목을 표시합니다. 출처 표기는 원문 접근권을 대체하지 않습니다.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h2>다운로드 자료도 제한합니다.</h2>
+            <p>전문가용 다운로드 파일은 변형 요약만 포함합니다. 검색엔진이 다운로드 파일을 직접 색인하지 않도록 robots.txt에서 다운로드 경로를 제외했습니다.</p>
+          </article>
+        </section>
+
+        <section class="rights-note">
+          <div>
+            <p class="eyebrow">Review checklist</p>
+            <h2>발행 전 확인 기준</h2>
+            <ul>
+              <li>원문 PDF나 번역본 PDF를 공개 경로에 복사하지 않습니다.</li>
+              <li>원문 문단을 연속적으로 재현하지 않습니다.</li>
+              <li>도표와 그림은 새로 만든 설명용 시각자료만 사용합니다.</li>
+              <li>요약이 원저작물 구매나 접근을 대체하지 않도록 범위와 목적을 표시합니다.</li>
+              <li>권리자 요청이 있으면 해당 페이지를 검토하고 필요한 경우 수정 또는 제거합니다.</li>
+            </ul>
+          </div>
+          <div>
+            <p class="eyebrow">Rights request</p>
+            <h2>권리자 요청</h2>
+            <p>권리자이거나 권리자를 대리하는 경우, 문제가 되는 페이지 URL과 대상 저작물을 명시해 GitHub 저장소 이슈로 알려주세요. 확인 후 필요한 수정 또는 제거 조치를 진행합니다.</p>
+            <a class="primary-link" href="https://github.com/heejoungkim/artsume/issues" rel="noreferrer">GitHub Issues</a>
+          </div>
+        </section>
+
+        <section class="rights-sources">
+          <p class="eyebrow">Reference</p>
+          <h2>운영 기준 참고</h2>
+          <p>미국 저작권청은 공정 이용 판단에서 목적과 성격, 저작물의 성격, 사용된 양과 중요성, 시장 영향 등을 종합적으로 본다고 설명합니다. 또한 DMCA에는 온라인 서비스 제공자에 대한 통지와 삭제 절차가 포함됩니다. 이 페이지는 법률 자문이 아니라 Artsume 운영 원칙입니다.</p>
+          <div class="paper-actions">
+            <a href="https://www.copyright.gov/fair-use/more-info.html" rel="noreferrer">U.S. Copyright Office: Fair Use</a>
+            <a href="https://www.copyright.gov/dmca/" rel="noreferrer">U.S. Copyright Office: DMCA</a>
+          </div>
+        </section>
+      </main>
+    `
+  });
+}
+
+function renderRightsGuard(currentPath) {
+  return `
+    <section class="rights-guard">
+      <div>
+        <p class="eyebrow">Copyright guardrails</p>
+        <h2>원문을 대체하지 않는 변형 요약</h2>
+        <p>이 섹션은 원문 PDF와 원문 전문을 게시하지 않습니다. 모든 paper 페이지는 출처를 명시하고, 학습 목적의 한국어 해설·요약·토론 질문·새 시각자료로 재구성합니다.</p>
+      </div>
+      <a class="text-link" href="${href(currentPath, "/copyright/")}">저작권 보호 원칙</a>
+    </section>
+  `;
+}
+
+function renderRobotsTxt() {
+  return `User-agent: *
+Disallow: /downloads/
+`;
 }
 
 function paperHref(paper) {
@@ -711,7 +807,8 @@ a {
 .issue-page,
 .article-page,
 .paper-room,
-.paper-page {
+.paper-page,
+.rights-page {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
 }
@@ -931,7 +1028,10 @@ a {
 .paper-session-grid,
 .paper-detail-grid,
 .public-card-news,
-.editorial-band {
+.editorial-band,
+.rights-grid,
+.rights-note,
+.rights-sources {
   margin: 66px 0;
 }
 
@@ -1292,6 +1392,116 @@ a {
   margin: 0;
 }
 
+.copyright-note a {
+  display: inline-flex;
+  margin-top: 12px;
+  font-weight: 900;
+}
+
+.rights-guard {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: end;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 26px 0;
+  margin: 42px 0 12px;
+}
+
+.rights-guard h2 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+
+.rights-guard p {
+  margin: 0;
+  max-width: 820px;
+  color: var(--muted);
+}
+
+.rights-hero {
+  min-height: 48vh;
+  display: grid;
+  align-content: center;
+  gap: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.rights-hero h1 {
+  margin: 0;
+  max-width: 940px;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 1;
+  word-break: keep-all;
+}
+
+.rights-hero p {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+.rights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.rights-grid article {
+  border-top: 4px solid var(--teal);
+  padding-top: 18px;
+}
+
+.rights-grid span {
+  color: var(--amber);
+  font-weight: 900;
+}
+
+.rights-grid h2 {
+  margin: 12px 0;
+  font-size: 1.35rem;
+  line-height: 1.18;
+}
+
+.rights-grid p,
+.rights-note p,
+.rights-sources p {
+  color: var(--muted);
+}
+
+.rights-note {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.55fr);
+  gap: 36px;
+  align-items: start;
+}
+
+.rights-note ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.rights-note li + li {
+  margin-top: 8px;
+}
+
+.rights-note > div:last-child {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper-2);
+  padding: 22px;
+}
+
+.rights-sources {
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+}
+
+.rights-sources p {
+  max-width: 860px;
+}
+
 .source-register {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
@@ -1426,7 +1636,9 @@ a {
   .paper-session,
   .paper-detail-header,
   .paper-detail-grid,
-  .source-register {
+  .source-register,
+  .rights-guard,
+  .rights-note {
     grid-template-columns: 1fr;
   }
 
@@ -1436,7 +1648,8 @@ a {
 
   .synthesis-band,
   .deck-scroll,
-  .public-card-grid {
+  .public-card-grid,
+  .rights-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1444,7 +1657,8 @@ a {
   .issue-header h1,
   .long-brief h1,
   .paper-room-hero h1,
-  .paper-detail-header h1 {
+  .paper-detail-header h1,
+  .rights-hero h1 {
     font-size: 2.1rem;
     line-height: 1.14;
   }
