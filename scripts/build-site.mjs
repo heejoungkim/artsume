@@ -44,7 +44,7 @@ function renderHome(site, issues) {
     pathName: currentPath,
     body: `
       <main class="home-shell">
-        ${latest ? renderLatestIssue(latest, currentPath) : renderEmptyState()}
+        ${latest ? renderLatestIssue(latest, currentPath, site) : renderEmptyState()}
         <section class="issue-index" aria-labelledby="issue-index-title">
           <div class="section-heading">
             <p class="eyebrow">Archive</p>
@@ -59,12 +59,13 @@ function renderHome(site, issues) {
   });
 }
 
-function renderLatestIssue(issue, currentPath) {
+function renderLatestIssue(issue, currentPath, site) {
   return `
     <section class="brief-hero" aria-labelledby="latest-title">
       <div class="hero-copy">
-        <p class="eyebrow">Latest issue</p>
+        <p class="eyebrow">${escapeHtml(site.title)} / Article Summary Room</p>
         <h1 id="latest-title">${escapeHtml(issue.title)}</h1>
+        <p class="collection-note">${escapeHtml(site.subtitle || "")}</p>
         <p class="hero-subtitle">${escapeHtml(issue.theme || "")}</p>
         <dl class="issue-meta">
           <div><dt>Published</dt><dd>${escapeHtml(formatDate(issue.publishedAt))}</dd></div>
@@ -495,11 +496,17 @@ a {
 }
 
 .hero-subtitle,
+.collection-note,
 .issue-header > p,
 .dek {
   color: var(--muted);
   font-size: 1.16rem;
   max-width: 720px;
+}
+
+.collection-note {
+  color: var(--ink);
+  font-weight: 800;
 }
 
 .eyebrow,

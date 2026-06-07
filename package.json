@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Weekly English article reading briefs with blog and card-news publishing for GitHub Pages.",
+  "description": "Article Summary Room for rigorous weekly reading briefs with blog and card-news publishing.",
   "engines": {
     "node": ">=22"
   },
