@@ -357,6 +357,17 @@ function renderSessionBlock(session, paperOfMind, currentPath) {
         <p class="eyebrow">${escapeHtml(session.label)}</p>
         <h2>${escapeHtml(session.title)}</h2>
         <p>${escapeHtml(session.theme)}</p>
+        <div class="session-source-list">
+          <p class="eyebrow">세션 구성 출처</p>
+          <ol>
+            ${papers.map((paper) => `
+              <li>
+                <span>${escapeHtml(paper.authorYear)}</span>
+                <cite>${escapeHtml(paper.title)}</cite>
+              </li>
+            `).join("")}
+          </ol>
+        </div>
       </div>
       <div class="paper-list">
         ${papers.map((paper) => `
@@ -364,6 +375,7 @@ function renderSessionBlock(session, paperOfMind, currentPath) {
             <p class="source-line">${escapeHtml(paper.authorYear)}</p>
             <h3><a href="${href(currentPath, paperHref(paper))}">${escapeHtml(paper.shortTitle)}</a></h3>
             <p>${escapeHtml(paper.focus)}</p>
+            <p class="paper-source-note">출처: ${escapeHtml(paper.title)} (${escapeHtml(paper.authorYear)})</p>
             <div class="paper-actions">
               <a href="${href(currentPath, paperHref(paper))}">카드뉴스 보기</a>
               <a href="${href(currentPath, paperDownloadHref(paper))}">전문가용 요약 다운로드</a>
@@ -378,6 +390,7 @@ function renderSessionBlock(session, paperOfMind, currentPath) {
 function renderPaperPage(site, paperOfMind, paper) {
   const currentPath = paperHref(paper);
   const session = paperOfMind.sessions.find((item) => item.id === paper.session) ?? {};
+  const sessionPapers = paperOfMind.papers.filter((item) => item.session === paper.session);
   return page({
     site,
     title: `${paper.shortTitle} | ${paperOfMind.title} | ${site.title}`,
@@ -405,6 +418,25 @@ function renderPaperPage(site, paperOfMind, paper) {
 
           <section class="copyright-note">
             <p>원문 PDF는 재게시하지 않습니다. 이 페이지는 수업과 공개 공유를 위한 변형 요약이며, 직접 인용 없이 논지와 임상적 함의를 재구성했습니다.</p>
+          </section>
+
+          <section class="source-register" aria-labelledby="source-register-title">
+            <div>
+              <p class="eyebrow">출처 paper</p>
+              <h2 id="source-register-title">이 페이지의 출처</h2>
+              <p><cite>${escapeHtml(paper.title)}</cite>, ${escapeHtml(paper.authorYear)}. ${escapeHtml(paper.sourceScope)}.</p>
+            </div>
+            <div>
+              <p class="eyebrow">세션 구성 출처</p>
+              <ol>
+                ${sessionPapers.map((item) => `
+                  <li>
+                    <span>${escapeHtml(item.authorYear)}</span>
+                    <cite>${escapeHtml(item.title)}</cite>
+                  </li>
+                `).join("")}
+              </ol>
+            </div>
           </section>
 
           <section class="paper-detail-grid">
@@ -463,6 +495,7 @@ function renderPaperPage(site, paperOfMind, paper) {
 
 function renderExpertDownload(paperOfMind, paper) {
   const session = paperOfMind.sessions.find((item) => item.id === paper.session) ?? {};
+  const sessionPapers = paperOfMind.papers.filter((item) => item.session === paper.session);
   return [
     `# ${paper.shortTitle}`,
     "",
@@ -470,10 +503,19 @@ function renderExpertDownload(paperOfMind, paper) {
     `- Author / year: ${paper.authorYear}`,
     `- Collection: ${paperOfMind.title}`,
     `- Session: ${session.label || ""} ${session.title || ""}`.trim(),
+    `- Source scope: ${paper.sourceScope}`,
     "",
     "## 저작권 메모",
     "",
     "원문 PDF를 재게시하지 않습니다. 이 파일은 학습과 토론을 위한 변형 요약이며, 직접 인용 없이 논지와 임상적 함의를 재구성한 자료입니다.",
+    "",
+    "## 출처",
+    "",
+    `- ${paper.authorYear}. ${paper.title}. ${paper.sourceScope}.`,
+    "",
+    "## 세션 구성 출처",
+    "",
+    ...sessionPapers.map((item) => `- ${item.authorYear}. ${item.title}. ${item.sourceScope}.`),
     "",
     "## 핵심 논지",
     "",
@@ -1153,6 +1195,41 @@ a {
   color: var(--muted);
 }
 
+.session-source-list {
+  margin-top: 22px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.session-source-list ol,
+.source-register ol {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.session-source-list li,
+.source-register li {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.session-source-list li + li,
+.source-register li + li {
+  margin-top: 8px;
+}
+
+.session-source-list span,
+.source-register span {
+  display: block;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.session-source-list cite,
+.source-register cite {
+  font-style: normal;
+}
+
 .paper-list {
   display: grid;
   gap: 14px;
@@ -1175,6 +1252,12 @@ a {
 .paper-card p {
   margin: 0 0 12px;
   color: #3f4650;
+}
+
+.paper-card .paper-source-note {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 700;
 }
 
 .paper-actions {
@@ -1207,6 +1290,26 @@ a {
 
 .copyright-note p {
   margin: 0;
+}
+
+.source-register {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 28px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0;
+  margin: 42px 0;
+}
+
+.source-register h2 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+}
+
+.source-register p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .paper-detail-grid {
@@ -1322,7 +1425,8 @@ a {
   .issue-row,
   .paper-session,
   .paper-detail-header,
-  .paper-detail-grid {
+  .paper-detail-grid,
+  .source-register {
     grid-template-columns: 1fr;
   }
 
